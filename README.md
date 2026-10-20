@@ -111,8 +111,8 @@ Uygulama toplam **5 ayrı tablo** kullanır:
 
 ### 1. Projeyi Klonlayın
 ```bash
-git clone https://github.com/KULLANICI_ADINIZ/CleanAuthApi.git
-cd CleanAuthApi
+git clone https://github.com/Pineleafs/CleanAuthAPI.git
+cd CleanAuthAPI
 ```
 
 ### 2. Veritabanı ve JWT Ayarlarını Yapılandırın
