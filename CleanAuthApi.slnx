@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CleanAuthApi.Api/CleanAuthApi.Api.csproj" />
+    <Project Path="src/CleanAuthApi.Application/CleanAuthApi.Application.csproj" />
+    <Project Path="src/CleanAuthApi.Domain/CleanAuthApi.Domain.csproj" />
+    <Project Path="src/CleanAuthApi.Infrastructure/CleanAuthApi.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CleanAuthApi.Tests/CleanAuthApi.Tests.csproj" />
+  </Folder>
+</Solution>

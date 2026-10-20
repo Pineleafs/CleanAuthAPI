@@ -1,0 +1,13 @@
+## .NET / Visual Studio / Rider Ignore
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+TestResults/
+*.log
+appsettings.Development.json

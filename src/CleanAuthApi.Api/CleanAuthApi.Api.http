@@ -1,0 +1,74 @@
+@CleanAuthApi.Api_HostAddress = http://localhost:5150
+@AccessToken = YOUR_JWT_ACCESS_TOKEN_HERE
+
+### 1. Yeni Kullanıcı Kaydı (Register)
+POST {{CleanAuthApi.Api_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "kullanici@ornek.com",
+  "password": "Password123!",
+  "firstName": "Ahmet",
+  "lastName": "Yılmaz"
+}
+
+### 2. Kullanıcı Girişi (Login)
+POST {{CleanAuthApi.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "kullanici@ornek.com",
+  "password": "Password123!"
+}
+
+### 3. Refresh Token ile Yeni Access Token Alma
+POST {{CleanAuthApi.Api_HostAddress}}/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "YOUR_REFRESH_TOKEN_HERE"
+}
+
+### 4. Mevcut Kullanıcı Profilini Görüntüleme (JWT Gerekli)
+GET {{CleanAuthApi.Api_HostAddress}}/api/users/me
+Authorization: Bearer {{AccessToken}}
+
+### 5. Kullanıcı Profilini Güncelleme (JWT Gerekli)
+PUT {{CleanAuthApi.Api_HostAddress}}/api/users/me
+Authorization: Bearer {{AccessToken}}
+Content-Type: application/json
+
+{
+  "firstName": "Ahmet Can",
+  "lastName": "Yılmaz"
+}
+
+### 6. Şifre Değiştirme (JWT Gerekli)
+PUT {{CleanAuthApi.Api_HostAddress}}/api/users/me/password
+Authorization: Bearer {{AccessToken}}
+Content-Type: application/json
+
+{
+  "currentPassword": "Password123!",
+  "newPassword": "NewPassword456!"
+}
+
+### 7. Oturumu Sonlandırma / Refresh Token İptali (JWT Gerekli)
+POST {{CleanAuthApi.Api_HostAddress}}/api/auth/revoke
+Authorization: Bearer {{AccessToken}}
+
+### 8. Başarısız Giriş Loglarını Görüntüleme (FailedLoginLogs)
+GET {{CleanAuthApi.Api_HostAddress}}/api/securitylogs/failed-logins
+Authorization: Bearer {{AccessToken}}
+
+### 9. Şifre Değişikliği Loglarını Görüntüleme (PasswordChangeLogs)
+GET {{CleanAuthApi.Api_HostAddress}}/api/securitylogs/password-changes
+Authorization: Bearer {{AccessToken}}
+
+### 10. Veritabanı / Sistem Hata Loglarını Görüntüleme (DatabaseErrorLogs)
+GET {{CleanAuthApi.Api_HostAddress}}/api/securitylogs/database-errors
+Authorization: Bearer {{AccessToken}}
+
+### 11. Genel Güvenlik Denetim Loglarını Görüntüleme (SecurityAuditLogs)
+GET {{CleanAuthApi.Api_HostAddress}}/api/securitylogs/audit-logs
+Authorization: Bearer {{AccessToken}}
